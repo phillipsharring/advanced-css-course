@@ -8,9 +8,28 @@
 
 html {
   // this defines what 1rem is
-  font-size: 62.5%;
+  font-size: 62.5%; // 1rem = 10px; 10/16px = 62.5%
+
+  // width < 1200px
+  @include respond(tab-land) {
+    font-size: 56.25%; // 1rem = 9px; 9/16 = 51%
+  }
+
+  // width < 900px
+  @include respond(tab-port) {
+    font-size: 50%; // 1rem = 8px; 8/16px = 50%;
+  }
+
+  // width > 1800px
+  @include respond(big-desktop) {
+    font-size: 75%; // 1rem = 12, 12/16 = 75%
+  }
 }
 
 body {
   box-sizing: border-box;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }
